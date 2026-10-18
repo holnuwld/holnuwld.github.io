@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Workspace Portal — GitHub Pages Index</title>
-  <meta name="description" content="GitHub Pages HTML 프로젝트 및 리포트 통합 인덱스 포털">
-  <meta name="theme-color" content="#f8fafc" id="meta-theme-color">
+  <title>GitHub Pages Portal — holnuwld</title>
+  <meta name="description" content="GitHub Pages 레포지토리별 HTML 페이지 통합 포털">
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     (function() {
       try {
@@ -30,22 +29,20 @@
       --text-secondary: #475569;
       --text-muted: #94a3b8;
       --border: #e2e8f0;
-      --border-hover: #cbd5e1;
+      --border-strong: #cbd5e1;
       --accent: #0f172a;
       --accent-fg: #ffffff;
       --primary: #2563eb;
       --primary-subtle: #eff6ff;
       --primary-border: #bfdbfe;
-      --coffee-bg: #fef3c7;
-      --coffee-text: #92400e;
-      --taiwan-bg: #ffe4e6;
-      --taiwan-text: #be123c;
-      --realty-bg: #e0e7ff;
-      --realty-text: #3730a3;
-      --emerald-bg: #d1fae5;
-      --emerald-text: #065f46;
-      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
-      --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+      --badge-pc-bg: #e0f2fe;
+      --badge-pc-text: #0369a1;
+      --badge-mob-bg: #dcfce7;
+      --badge-mob-text: #15803d;
+      --badge-ver-bg: #f1f5f9;
+      --badge-ver-text: #64748b;
+      --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
       --radius-lg: 16px;
       --radius-md: 12px;
       --radius-sm: 8px;
@@ -55,27 +52,25 @@
       --bg: #0b0f17;
       --surface: #131b29;
       --surface-subtle: #1e293b;
-      --surface-hover: #1a2436;
+      --surface-hover: #192335;
       --text-primary: #f8fafc;
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
       --border: #1e293b;
-      --border-hover: #334155;
+      --border-strong: #334155;
       --accent: #f8fafc;
       --accent-fg: #0f172a;
       --primary: #60a5fa;
-      --primary-subtle: rgba(59, 130, 246, 0.14);
-      --primary-border: rgba(96, 165, 250, 0.3);
-      --coffee-bg: rgba(245, 158, 11, 0.15);
-      --coffee-text: #fbbf24;
-      --taiwan-bg: rgba(244, 63, 94, 0.15);
-      --taiwan-text: #fb7185;
-      --realty-bg: rgba(99, 102, 241, 0.15);
-      --realty-text: #818cf8;
-      --emerald-bg: rgba(16, 185, 129, 0.15);
-      --emerald-text: #34d399;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
+      --primary-subtle: rgba(59, 130, 246, 0.15);
+      --primary-border: rgba(96, 165, 250, 0.35);
+      --badge-pc-bg: rgba(14, 165, 233, 0.15);
+      --badge-pc-text: #38bdf8;
+      --badge-mob-bg: rgba(34, 197, 94, 0.15);
+      --badge-mob-text: #4ade80;
+      --badge-ver-bg: #1e293b;
+      --badge-ver-text: #94a3b8;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 12px 28px -6px rgba(0, 0, 0, 0.5);
     }
 
     * {
@@ -91,32 +86,32 @@
       color: var(--text-primary);
       line-height: 1.5;
       min-height: 100vh;
-      transition: background-color 0.2s ease, color 0.2s ease;
       padding-bottom: 64px;
-    }
-
-    /* Top Header */
-    .top-bar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
 
     .container {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 18px;
+    }
+
+    /* Sticky Top Header */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 60px;
       gap: 12px;
     }
 
@@ -129,36 +124,33 @@
     }
 
     .brand-logo {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
       background: var(--accent);
       color: var(--accent-fg);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.9rem;
-      letter-spacing: -0.03em;
+      font-size: 0.85rem;
     }
 
     .brand-title {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       letter-spacing: -0.02em;
     }
 
     .brand-sub {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       display: none;
     }
 
     @media (min-width: 640px) {
-      .brand-sub {
-        display: inline;
-      }
+      .brand-sub { display: inline; }
     }
 
     .header-actions {
@@ -173,7 +165,7 @@
       gap: 6px;
       padding: 5px 10px;
       border-radius: 999px;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       font-weight: 600;
       background: var(--surface);
       border: 1px solid var(--border);
@@ -188,69 +180,55 @@
     }
 
     .icon-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
+      height: 34px;
+      padding: 0 10px;
+      border-radius: 9px;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text-primary);
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 5px;
       cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: inherit;
       transition: all 0.15s ease;
-      font-size: 0.95rem;
     }
 
     .icon-btn:hover {
-      border-color: var(--border-hover);
+      border-color: var(--border-strong);
       background: var(--surface-subtle);
     }
 
-    /* Hero & Controls */
+    /* Hero & Toolbar */
     .hero {
-      padding: 32px 0 20px;
-    }
-
-    .hero-top {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    @media (min-width: 768px) {
-      .hero-top {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-      }
+      padding: 28px 0 18px;
     }
 
     .hero h1 {
-      font-size: 1.65rem;
+      font-size: 1.55rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+      .hero h1 { font-size: 1.85rem; }
     }
 
     .hero p {
       color: var(--text-secondary);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
+      margin-bottom: 20px;
     }
 
-    /* Search & Filter Toolbar */
     .toolbar {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     @media (min-width: 768px) {
@@ -270,18 +248,17 @@
       scrollbar-width: none;
     }
 
-    .tabs::-webkit-scrollbar {
-      display: none;
-    }
+    .tabs::-webkit-scrollbar { display: none; }
 
     .tab-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 14px;
+      padding: 7px 13px;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
+      font-family: 'JetBrains Mono', 'Pretendard', sans-serif;
       white-space: nowrap;
       border: 1px solid var(--border);
       background: var(--surface);
@@ -291,7 +268,7 @@
     }
 
     .tab-btn:hover {
-      border-color: var(--border-hover);
+      border-color: var(--border-strong);
       color: var(--text-primary);
     }
 
@@ -302,15 +279,10 @@
     }
 
     .tab-count {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       padding: 1px 6px;
       border-radius: 999px;
       background: rgba(148, 163, 184, 0.2);
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .tab-btn.active .tab-count {
-      background: rgba(148, 163, 184, 0.35);
     }
 
     .search-wrap {
@@ -319,20 +291,17 @@
     }
 
     @media (min-width: 768px) {
-      .search-wrap {
-        width: 280px;
-        flex-shrink: 0;
-      }
+      .search-wrap { width: 270px; flex-shrink: 0; }
     }
 
     .search-input {
       width: 100%;
-      padding: 9px 36px 9px 36px;
+      padding: 8px 32px 8px 34px;
       border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text-primary);
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-family: inherit;
       outline: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -345,138 +314,268 @@
 
     .search-icon {
       position: absolute;
-      left: 12px;
+      left: 11px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       pointer-events: none;
     }
 
     .search-kbd {
       position: absolute;
-      right: 10px;
+      right: 9px;
       top: 50%;
       transform: translateY(-50%);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border-radius: 5px;
+      font-size: 0.68rem;
+      padding: 1px 5px;
+      border-radius: 4px;
       background: var(--surface-subtle);
       color: var(--text-muted);
       border: 1px solid var(--border);
       pointer-events: none;
     }
 
-    /* Section Group */
-    .category-section {
-      margin-bottom: 36px;
+    /* Repository Block */
+    .repo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-      padding-bottom: 8px;
+    .repo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .repo-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+    }
+
+    .repo-header {
+      padding: 18px 20px;
       border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: color-mix(in srgb, var(--surface-subtle) 45%, var(--surface));
     }
 
-    .section-title-group {
+    @media (min-width: 720px) {
+      .repo-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .repo-title-area {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .repo-name-row {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 8px;
     }
 
-    .section-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
+    .repo-icon {
+      font-size: 1.15rem;
     }
 
-    .section-repo-badge {
+    .repo-name {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      background: var(--surface-subtle);
-      padding: 2px 8px;
-      border-radius: 6px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
       text-decoration: none;
     }
 
-    .section-repo-badge:hover {
+    .repo-name:hover {
       color: var(--primary);
     }
 
-    /* Cards Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+    .repo-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--surface-subtle);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
     }
 
-    @media (min-width: 640px) {
-      .grid {
+    .repo-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    .repo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border-radius: 9px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--border-strong);
+      background: var(--surface-subtle);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-fg);
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      background: var(--accent);
+    }
+
+    .btn-mobile {
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+
+    /* HTML Pages List inside a Repository */
+    .page-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      divide-y: 1px solid var(--border);
+    }
+
+    @media (min-width: 768px) {
+      .page-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (min-width: 980px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-      position: relative;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-md);
-    }
-
-    .card-head {
+    .page-item {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 10px;
+      gap: 12px;
+      transition: background-color 0.15s ease;
     }
 
-    .cat-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.73rem;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 6px;
+    @media (min-width: 768px) {
+      .page-item:nth-child(odd) {
+        border-right: 1px solid var(--border);
+      }
     }
 
-    .cat-coffee { background: var(--coffee-bg); color: var(--coffee-text); }
-    .cat-taiwan { background: var(--taiwan-bg); color: var(--taiwan-text); }
-    .cat-realty { background: var(--realty-bg); color: var(--realty-text); }
-    .cat-hub    { background: var(--emerald-bg); color: var(--emerald-text); }
+    .page-item:hover {
+      background-color: var(--surface-hover);
+    }
 
-    .card-tools {
+    .page-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .page-top {
       display: flex;
       align-items: center;
-      gap: 4px;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 3px;
     }
 
-    .mini-btn {
+    .page-path {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .page-path:hover {
+      text-decoration: underline;
+    }
+
+    .type-badge {
+      font-size: 0.67rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      line-height: 1.4;
+    }
+
+    .badge-pc  { background: var(--badge-pc-bg); color: var(--badge-pc-text); }
+    .badge-mob { background: var(--badge-mob-bg); color: var(--badge-mob-text); }
+    .badge-ver { background: var(--badge-ver-bg); color: var(--badge-ver-text); }
+
+    .page-title {
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: block;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .page-title:hover {
+      color: var(--primary);
+    }
+
+    .page-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .open-pill {
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--surface-subtle);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .open-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .copy-btn {
       width: 28px;
       height: 28px;
       border-radius: 7px;
@@ -487,120 +586,25 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
-      transition: all 0.15s ease;
+      font-size: 0.8rem;
     }
 
-    .mini-btn:hover {
+    .copy-btn:hover {
       background: var(--surface-subtle);
       color: var(--text-primary);
     }
 
-    .mini-btn.pinned {
-      color: #f59e0b;
-    }
-
-    .card-title {
-      font-size: 1.04rem;
-      font-weight: 700;
-      line-height: 1.38;
-      margin-bottom: 6px;
-      letter-spacing: -0.015em;
-    }
-
-    .card-title a {
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-
-    .card-title a:hover {
-      color: var(--primary);
-    }
-
-    .card-desc {
-      font-size: 0.84rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-      margin-bottom: 12px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .tag {
-      font-size: 0.72rem;
-      color: var(--text-secondary);
-      background: var(--surface-subtle);
-      padding: 2px 8px;
-      border-radius: 5px;
-      font-weight: 500;
-    }
-
-    /* Card Action Footer */
-    .card-footer {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 8px;
-    }
-
-    .link-btn {
-      flex: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 9px 12px;
-      border-radius: 9px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.15s ease;
-      border: 1px solid var(--border);
-      background: var(--surface-subtle);
-      color: var(--text-primary);
-    }
-
-    .link-btn:hover {
-      border-color: var(--border-hover);
-      background: var(--border);
-    }
-
-    .link-btn.primary {
-      background: var(--accent);
-      color: var(--accent-fg);
-      border-color: var(--accent);
-    }
-
-    .link-btn.primary:hover {
-      opacity: 0.9;
-    }
-
-    .link-btn.recommended {
-      border-color: var(--primary);
-      background: var(--primary-subtle);
-      color: var(--primary);
-    }
-
-    .sublinks-details {
+    /* Collapsible Archive / Legacy Section inside Repo */
+    .repo-archive {
+      padding: 10px 20px;
+      background: color-mix(in srgb, var(--surface-subtle) 30%, var(--surface));
       font-size: 0.78rem;
-      color: var(--text-secondary);
     }
 
-    .sublinks-details summary {
+    .repo-archive summary {
       cursor: pointer;
       color: var(--text-muted);
-      font-weight: 500;
-      padding: 4px 0;
+      font-weight: 600;
       user-select: none;
       list-style: none;
       display: flex;
@@ -608,123 +612,36 @@
       justify-content: space-between;
     }
 
-    .sublinks-details summary::-webkit-details-marker {
-      display: none;
-    }
+    .repo-archive summary::-webkit-details-marker { display: none; }
+    .repo-archive summary:hover { color: var(--text-primary); }
 
-    .sublinks-details summary:hover {
-      color: var(--text-primary);
-    }
-
-    .sublinks-list {
-      margin-top: 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 8px;
-      background: var(--surface-subtle);
-      border-radius: 8px;
-    }
-
-    .sublink-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      color: var(--text-secondary);
-      padding: 4px 6px;
-      border-radius: 5px;
-      font-size: 0.76rem;
-    }
-
-    .sublink-item:hover {
-      background: var(--surface);
-      color: var(--primary);
-    }
-
-    .mono-path {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    /* Live GitHub Explorer Box */
-    .explorer-box {
-      margin-top: 40px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 20px;
-    }
-
-    .explorer-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .explorer-title {
-      font-size: 0.98rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .sync-btn {
-      padding: 7px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface-subtle);
-      color: var(--text-primary);
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
+    .archive-grid {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 6px;
     }
 
-    .sync-btn:hover {
-      border-color: var(--border-hover);
+    @media (min-width: 640px) {
+      .archive-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    .file-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.82rem;
-    }
-
-    .file-table th,
-    .file-table td {
-      text-align: left;
-      padding: 9px 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .file-table th {
-      color: var(--text-muted);
-      font-weight: 600;
-      font-size: 0.75rem;
-    }
-
-    .file-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .file-table a {
-      color: var(--primary);
+    .archive-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 10px;
+      border-radius: 7px;
+      background: var(--surface);
+      border: 1px solid var(--border);
       text-decoration: none;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      word-break: break-all;
+      color: var(--text-secondary);
+      gap: 8px;
     }
 
-    .file-table a:hover {
-      text-decoration: underline;
+    .archive-item:hover {
+      border-color: var(--primary);
+      color: var(--primary);
     }
 
     /* Toast */
@@ -764,20 +681,23 @@
 </head>
 <body>
 
-  <!-- Top Sticky Bar -->
+  <!-- Top Bar -->
   <header class="top-bar">
     <div class="container header-inner">
       <a href="#" class="brand">
         <div class="brand-logo">H</div>
-        <span class="brand-title">HTML Portal</span>
-        <span class="brand-sub">holnuwld.github.io</span>
+        <span class="brand-title">holnuwld.github.io</span>
+        <span class="brand-sub">Repository Portal</span>
       </a>
       <div class="header-actions">
-        <div class="device-pill" id="device-indicator" title="현재 접속 기기에 맞춰 추천 링크를 강조합니다">
+        <div class="device-pill" title="현재 접속 기기">
           <span class="device-dot"></span>
           <span id="device-text">기기 감지 중</span>
         </div>
-        <button class="icon-btn" id="theme-toggle" title="테마 전환 (라이트/다크)" aria-label="테마 전환">
+        <button class="icon-btn" id="sync-btn" title="GitHub API로 저장소 및 HTML 파일 최신화">
+          <span id="sync-icon">🔄</span> <span>동기화</span>
+        </button>
+        <button class="icon-btn" id="theme-toggle" title="라이트/다크 모드 전환" aria-label="테마 전환">
           <span id="theme-icon">🌙</span>
         </button>
       </div>
@@ -787,64 +707,22 @@
   <main class="container">
     <!-- Hero -->
     <section class="hero">
-      <div class="hero-top">
-        <div>
-          <h1>내 GitHub Pages 아카이브</h1>
-          <p>제작한 HTML 대시보드와 가이드를 카테고리·기기별(PC/모바일)로 한 번에 연결합니다.</p>
-        </div>
-      </div>
+      <h1>GitHub Pages 레포지토리 인덱스</h1>
+      <p>저장소(Repository) 단위로 분류된 HTML 페이지 포털입니다.</p>
 
-      <!-- Filter Tabs & Search -->
+      <!-- Repo Filter Tabs & Search -->
       <div class="toolbar">
-        <div class="tabs" id="category-tabs">
-          <button class="tab-btn active" data-cat="all">전체 <span class="tab-count" id="count-all">0</span></button>
-          <button class="tab-btn" data-cat="pinned">⭐ 즐겨찾기 <span class="tab-count" id="count-pinned">0</span></button>
-          <button class="tab-btn" data-cat="coffee">☕ 스페셜티 커피 <span class="tab-count" id="count-coffee">0</span></button>
-          <button class="tab-btn" data-cat="taiwan">✈️ 대만 여행·미식·숙소 <span class="tab-count" id="count-taiwan">0</span></button>
-          <button class="tab-btn" data-cat="realty">🏢 부동산 분석 <span class="tab-count" id="count-realty">0</span></button>
-        </div>
-
+        <div class="tabs" id="repo-tabs"></div>
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
-          <input type="search" id="search-input" class="search-input" placeholder="제목, 태그, 파일명 검색..." autocomplete="off">
-          <span class="search-kbd" id="search-kbd">/</span>
+          <input type="search" id="search-input" class="search-input" placeholder="레포지토리, 파일명, 제목 검색..." autocomplete="off">
+          <span class="search-kbd">/</span>
         </div>
       </div>
     </section>
 
-    <!-- Dynamic Portal Sections -->
-    <div id="portal-content"></div>
-
-    <!-- GitHub Live HTML Scanner -->
-    <section class="explorer-box">
-      <div class="explorer-head">
-        <div>
-          <div class="explorer-title">
-            <span>📂 GitHub 저장소 전체 HTML 파일 탐색기</span>
-          </div>
-          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px;">
-            <code>holnuwld</code> 계정의 모든 GitHub Pages 저장소에 있는 원본 <code>.html</code> 파일 전체 목록입니다. 새로 업로드한 파일도 실시간 조회가 가능합니다.
-          </p>
-        </div>
-        <button class="sync-btn" id="sync-github-btn">
-          <span id="sync-icon">🔄</span> GitHub 실시간 동기화
-        </button>
-      </div>
-
-      <div style="overflow-x: auto;">
-        <table class="file-table" id="raw-files-table">
-          <thead>
-            <tr>
-              <th>저장소 (Repo)</th>
-              <th>분류</th>
-              <th>파일 경로 (클릭 시 이동)</th>
-              <th style="text-align: right;">복사</th>
-            </tr>
-          </thead>
-          <tbody id="raw-files-tbody"></tbody>
-        </table>
-      </div>
-    </section>
+    <!-- Repository List Container -->
+    <div id="repo-container" class="repo-list"></div>
   </main>
 
   <div class="toast" id="toast">링크가 복사되었습니다</div>
@@ -853,220 +731,129 @@
     const BASE_URL = 'https://holnuwld.github.io';
     const GITHUB_USER = 'holnuwld';
 
-    // 1. Curated Pages Data (Grouped by Category & Purpose, pairing PC + Mobile & Legacy links)
-    const PORTAL_ITEMS = [
-      // === COFFEE ===
+    // Repository-based Data Definition
+    const REPOSITORIES = [
       {
-        id: 'coffee-main-hub',
-        category: 'coffee',
-        categoryLabel: '☕ 스페셜티 커피',
         repo: 'coffee',
-        title: 'UAE 2대 명문 스페셜티 커피 통합 검증 & 구매 가이드',
-        desc: '두바이·샤르자 2대 로스터리(Archers, The Espresso Lab) 171종 원두 통합 큐레이션, 100g 소분 가성비 비교 및 필터링 대시보드.',
-        tags: ['통합 허브', '171종 원두', '100g 큐레이션', '자동 기기감지'],
-        pcUrl: `${BASE_URL}/coffee/?view=desktop`,
-        mobileUrl: `${BASE_URL}/coffee/mobile_index.html`,
-        subLinks: [
-          { label: '기본 진입 주소 (기기 자동 감지)', path: 'coffee/index.html', url: `${BASE_URL}/coffee/` }
+        icon: '☕',
+        categoryBadge: '스페셜티 커피',
+        desc: 'UAE 두바이·샤르자 2대 명문 로스터리(Archers, The Espresso Lab) 171종 원두 검증 · 데이터 분석 · 발주서(PO)',
+        mainPcUrl: `${BASE_URL}/coffee/?view=desktop`,
+        mainMobileUrl: `${BASE_URL}/coffee/mobile_index.html`,
+        pages: [
+          { path: 'index.html', title: 'UAE 2대 스페셜티 커피 통합 검증 & 구매 가이드 (메인 허브)', type: 'PC/자동', url: `${BASE_URL}/coffee/` },
+          { path: 'mobile_index.html', title: 'UAE 2대 스페셜티 커피 100g 통합 큐레이션 (모바일 퀵 가이드)', type: 'Mobile', url: `${BASE_URL}/coffee/mobile_index.html` },
+          { path: 'archers_coffee_clean_verified.html', title: '아처스 커피 (Archers Coffee) 공식 전수 검증 & 구매 가이드', type: 'PC', url: `${BASE_URL}/coffee/archers_coffee_clean_verified.html` },
+          { path: 'archers_mobile.html', title: '아처스 커피 (Archers Coffee) 모바일 구매 가이드', type: 'Mobile', url: `${BASE_URL}/coffee/archers_mobile.html` },
+          { path: 'theespressolab_verified.html', title: '더 에스프레소 랩 (The Espresso Lab) 전수 원두 검증 가이드', type: 'PC', url: `${BASE_URL}/coffee/theespressolab_verified.html` },
+          { path: 'theespressolab_mobile.html', title: '더 에스프레소 랩 (The Espresso Lab) 모바일 구매 가이드', type: 'Mobile', url: `${BASE_URL}/coffee/theespressolab_mobile.html` },
+          { path: 'analytics.html', title: '전체 원두 인터랙티브 데이터 분석 (171종)', type: 'PC', url: `${BASE_URL}/coffee/analytics.html` },
+          { path: 'cart.html', title: 'UAE 스페셜티 커피 현지 구매 발주서 (PC PO & Spec Sheet)', type: 'PC', url: `${BASE_URL}/coffee/cart.html` },
+          { path: 'mobile_cart.html', title: 'UAE 스페셜티 커피 현지 구매 발주서 (모바일 PO)', type: 'Mobile', url: `${BASE_URL}/coffee/mobile_cart.html` }
+        ],
+        archivePages: [
+          { path: 'archers_coffee_guide.html', title: '아처스 커피 전 컬렉션 분석 리포트 (이전 버전)', url: `${BASE_URL}/coffee/archers_coffee_guide.html` },
+          { path: 'mobile.html', title: '아처스 커피 모바일 가이드 (미러 페이지)', url: `${BASE_URL}/coffee/mobile.html` }
         ]
       },
       {
-        id: 'coffee-archers',
-        category: 'coffee',
-        categoryLabel: '☕ 스페셜티 커피',
-        repo: 'coffee',
-        title: '아처스 커피 (Archers Coffee) 전수 검증 & 구매 가이드',
-        desc: 'Archers Coffee 공식 라인업 전수 검증 리포트, 플레이버 노트·가공법별 분류 및 현지 매장 구매 가이드.',
-        tags: ['Archers Coffee', '샤르자·두바이', '원두 검증'],
-        pcUrl: `${BASE_URL}/coffee/archers_coffee_clean_verified.html`,
-        mobileUrl: `${BASE_URL}/coffee/archers_mobile.html`,
-        subLinks: [
-          { label: '아처스 전 컬렉션 큐레이션 리포트', path: 'coffee/archers_coffee_guide.html', url: `${BASE_URL}/coffee/archers_coffee_guide.html` },
-          { label: '아처스 모바일 가이드 (대체 주소)', path: 'coffee/mobile.html', url: `${BASE_URL}/coffee/mobile.html` }
-        ]
-      },
-      {
-        id: 'coffee-espressolab',
-        category: 'coffee',
-        categoryLabel: '☕ 스페셜티 커피',
-        repo: 'coffee',
-        title: '더 에스프레소 랩 (The Espresso Lab) 전수 검증 가이드',
-        desc: '두바이 The Espresso Lab 파나마 게이샤·컴피티션 랏 등 프리미엄 원두 라인업 전수 검증 및 테이스팅 노트.',
-        tags: ['The Espresso Lab', '게이샤·컴피티션', '두바이'],
-        pcUrl: `${BASE_URL}/coffee/theespressolab_verified.html`,
-        mobileUrl: `${BASE_URL}/coffee/theespressolab_mobile.html`,
-        subLinks: []
-      },
-      {
-        id: 'coffee-analytics',
-        category: 'coffee',
-        categoryLabel: '☕ 스페셜티 커피',
-        repo: 'coffee',
-        title: '전체 원두 인터랙티브 데이터 분석 (171종)',
-        desc: '생산국, 품종(Geisha, SL28 등), 가공방식, 가격대 분포를 차트와 테이블로 비교하는 인터랙티브 애널리틱스.',
-        tags: ['데이터 시각화', '171종 통계', '가성비 분석'],
-        pcUrl: `${BASE_URL}/coffee/analytics.html`,
-        mobileUrl: null,
-        subLinks: []
-      },
-      {
-        id: 'coffee-cart-po',
-        category: 'coffee',
-        categoryLabel: '☕ 스페셜티 커피',
-        repo: 'coffee',
-        title: 'UAE 스페셜티 커피 현지 구매 발주서 (PO & Spec Sheet)',
-        desc: '선택한 원두 장바구니 내역, 총 중량(g)·AED/KRW 환산 금액 계산 및 현지 매장 제시용 발주서.',
-        tags: ['장바구니', '발주서(PO)', 'AED 환율계산'],
-        pcUrl: `${BASE_URL}/coffee/cart.html`,
-        mobileUrl: `${BASE_URL}/coffee/mobile_cart.html`,
-        subLinks: []
-      },
-
-      // === TAIWAN ===
-      {
-        id: 'taiwan-master-hub',
-        category: 'taiwan',
-        categoryLabel: '✈️ 대만 여행·미식·숙소',
         repo: 'taiwan-food',
-        title: '대만 타이베이 여행 · 미식 · 숙소 종합 허브',
-        desc: '3박 4일 여행 일정표, 미식 가이드, 에미레이트 리워드 숙소 대시보드로 연결되는 타이베이 마스터 게이트웨이.',
-        tags: ['마스터 허브', '타이베이', '올인원 포털'],
-        pcUrl: `${BASE_URL}/taiwan-food/`,
-        mobileUrl: null,
-        subLinks: []
+        icon: '🇹🇼',
+        categoryBadge: '대만 통합 허브',
+        desc: '대만 타이베이 여행 일정(trip_plan) · 미식 가이드(food) · 에미레이트 숙소(hotel) 통합 저장소',
+        mainPcUrl: `${BASE_URL}/taiwan-food/`,
+        mainMobileUrl: `${BASE_URL}/taiwan-food/trip_plan/taipei_travel_plan_mobile_v3.html`,
+        pages: [
+          { path: 'index.html', title: '대만 타이베이 여행 · 미식 · 숙소 종합 가이드 (Taiwan Travel Hub)', type: 'Hub', url: `${BASE_URL}/taiwan-food/` },
+          { path: 'food/index.html', title: '타이베이 유튜브 200개 영상 맛집 전수 분석 가이드 (V4)', type: 'PC', url: `${BASE_URL}/taiwan-food/food/` },
+          { path: 'food/mobile.html', title: '타이베이 유튜브 200개 영상 맛집 가이드 (모바일 V4)', type: 'Mobile', url: `${BASE_URL}/taiwan-food/food/mobile.html` },
+          { path: 'food/taiwan_food_guide.html', title: '대만 유명 전통 음식 & 15대 레스토랑 구글지도 가이드', type: 'PC', url: `${BASE_URL}/taiwan-food/food/taiwan_food_guide.html` },
+          { path: 'trip_plan/taipei_3n4d_dashboard_v3.html', title: '타이베이 3박 4일 프리미엄 여행 대시보드 v3', type: 'PC', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_3n4d_dashboard_v3.html` },
+          { path: 'trip_plan/taipei_travel_plan_mobile_v3.html', title: '타이베이 3박 4일 완벽 여행 계획서 v3 (모바일)', type: 'Mobile', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_travel_plan_mobile_v3.html` },
+          { path: 'hotel/index.html', title: '타이베이 에미레이트 리워드 10k~15k 마일 가성비 호텔 50선 (v2)', type: 'PC', url: `${BASE_URL}/taiwan-food/hotel/` },
+          { path: 'hotel/v1.html', title: '타이베이 에미레이트 리워드 5성급 럭셔리 호텔 50선 (v1)', type: 'PC', url: `${BASE_URL}/taiwan-food/hotel/v1.html` }
+        ],
+        archivePages: [
+          { path: 'food/youtube_food_guide.html', title: '유튜브 200개 영상 맛집 가이드 (원본 파일)', url: `${BASE_URL}/taiwan-food/food/youtube_food_guide.html` },
+          { path: 'food/youtube_food_guide_mobile.html', title: '유튜브 200개 영상 맛집 모바일 (원본 파일)', url: `${BASE_URL}/taiwan-food/food/youtube_food_guide_mobile.html` },
+          { path: 'hotel/v2.html', title: '가성비 호텔 50선 v2 (동일 미러)', url: `${BASE_URL}/taiwan-food/hotel/v2.html` },
+          { path: 'hotel/taiwan-hotel_v2.html', title: '가성비 호텔 50선 taiwan-hotel_v2 (동일 미러)', url: `${BASE_URL}/taiwan-food/hotel/taiwan-hotel_v2.html` },
+          { path: 'trip_plan/taipei_3n4d_dashboard_v2.html', title: '3박 4일 여행 대시보드 v2 (구버전)', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_3n4d_dashboard_v2.html` },
+          { path: 'trip_plan/taipei_travel_plan_mobile_v2.html', title: '3박 4일 모바일 여행 가이드 v2 (구버전)', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_travel_plan_mobile_v2.html` },
+          { path: 'trip_plan/taipei_3n4d_dashboard.html', title: '3박 4일 여행 대시보드 v1 (구버전)', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_3n4d_dashboard.html` },
+          { path: 'trip_plan/taipei_travel_plan_mobile.html', title: '3박 4일 모바일 여행 가이드 v1 (구버전)', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_travel_plan_mobile.html` }
+        ]
       },
       {
-        id: 'taiwan-trip-v3',
-        category: 'taiwan',
-        categoryLabel: '✈️ 대만 여행·미식·숙소',
         repo: 'taiwan-trip',
-        title: '타이베이 3박 4일 완벽 여행 일정 대시보드 (v3)',
-        desc: '11/11~11/14 부부 맞춤 1일 3식 동선, T1 공항철도, 실시간 환율 계산기, 8대 미식 & 3대 기념품 사진 원본 검증 완비.',
-        tags: ['3박 4일 일정', 'v3 최신판', 'MRT 동선', '실시간 환율'],
-        pcUrl: `${BASE_URL}/taiwan-trip/`,
-        mobileUrl: `${BASE_URL}/taiwan-trip/taipei_travel_plan_mobile_v3.html`,
-        subLinks: [
-          { label: 'taiwan-food 내 v3 데스크탑', path: 'taiwan-food/trip_plan/taipei_3n4d_dashboard_v3.html', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_3n4d_dashboard_v3.html` },
-          { label: 'taiwan-food 내 v3 모바일', path: 'taiwan-food/trip_plan/taipei_travel_plan_mobile_v3.html', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_travel_plan_mobile_v3.html` },
-          { label: '이전 버전 (v2 데스크탑)', path: 'taiwan-food/trip_plan/taipei_3n4d_dashboard_v2.html', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_3n4d_dashboard_v2.html` },
-          { label: '이전 버전 (v2 모바일)', path: 'taiwan-food/trip_plan/taipei_travel_plan_mobile_v2.html', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_travel_plan_mobile_v2.html` },
-          { label: '이전 버전 (v1 데스크탑)', path: 'taiwan-food/trip_plan/taipei_3n4d_dashboard.html', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_3n4d_dashboard.html` },
-          { label: '이전 버전 (v1 모바일)', path: 'taiwan-food/trip_plan/taipei_travel_plan_mobile.html', url: `${BASE_URL}/taiwan-food/trip_plan/taipei_travel_plan_mobile.html` }
+        icon: '🗺️',
+        categoryBadge: '대만 3박 4일 일정',
+        desc: '타이베이 3박 4일 부부 맞춤 일정표 v3 (사진 원본 실증 & 3회 재검증 단독 배포 저장소)',
+        mainPcUrl: `${BASE_URL}/taiwan-trip/`,
+        mainMobileUrl: `${BASE_URL}/taiwan-trip/taipei_travel_plan_mobile_v3.html`,
+        pages: [
+          { path: 'index.html', title: '대만 타이베이 3박 4일 프리미엄 여행 대시보드 v3 (메인)', type: 'PC', url: `${BASE_URL}/taiwan-trip/` },
+          { path: 'taipei_travel_plan_mobile_v3.html', title: '대만 타이베이 3박 4일 완벽 여행 계획서 v3 (모바일 최적화)', type: 'Mobile', url: `${BASE_URL}/taiwan-trip/taipei_travel_plan_mobile_v3.html` }
+        ],
+        archivePages: [
+          { path: 'taipei_3n4d_dashboard_v3.html', title: '3박 4일 데스크탑 대시보드 v3 (index와 동일)', url: `${BASE_URL}/taiwan-trip/taipei_3n4d_dashboard_v3.html` }
         ]
       },
       {
-        id: 'taiwan-food-youtube-v4',
-        category: 'taiwan',
-        categoryLabel: '✈️ 대만 여행·미식·숙소',
         repo: 'taiwan-food-yt',
-        title: '타이베이 유튜브 200개 영상 맛집 전수 분석 가이드 (V4)',
-        desc: '유튜브 200개 영상에서 추출·교차 검증한 타이베이 핵심 맛집 스마트 필터, 지도 연동 및 실리뷰 요약.',
-        tags: ['유튜브 200선', '맛집 V4', '인터랙티브 지도'],
-        pcUrl: `${BASE_URL}/taiwan-food/food/`,
-        mobileUrl: `${BASE_URL}/taiwan-food/food/mobile.html`,
-        subLinks: [
-          { label: '단독 저장소 PC (taiwan-food-yt)', path: 'taiwan-food-yt/index.html', url: `${BASE_URL}/taiwan-food-yt/` },
-          { label: '단독 저장소 모바일 (taiwan-food-yt)', path: 'taiwan-food-yt/mobile.html', url: `${BASE_URL}/taiwan-food-yt/mobile.html` },
-          { label: '대만 15대 전통 음식 & 미슐랭 가이드 (구버전)', path: 'taiwan-food/food/taiwan_food_guide.html', url: `${BASE_URL}/taiwan-food/food/taiwan_food_guide.html` }
+        icon: '🍜',
+        categoryBadge: '대만 미식 가이드',
+        desc: '타이베이 유튜브 200개 영상 맛집 전수 분석 V4 & 전통 미식 가이드 단독 저장소',
+        mainPcUrl: `${BASE_URL}/taiwan-food-yt/`,
+        mainMobileUrl: `${BASE_URL}/taiwan-food-yt/mobile.html`,
+        pages: [
+          { path: 'index.html', title: '타이베이 유튜브 200개 영상 맛집 전수 분석 & 스마트 가이드 (V4)', type: 'PC', url: `${BASE_URL}/taiwan-food-yt/` },
+          { path: 'mobile.html', title: '타이베이 유튜브 200개 영상 맛집 가이드 (모바일 V4)', type: 'Mobile', url: `${BASE_URL}/taiwan-food-yt/mobile.html` },
+          { path: 'taiwan_food_guide.html', title: '대만 유명 전통 음식 & 레스토랑 구글지도 완벽 가이드', type: 'PC', url: `${BASE_URL}/taiwan-food-yt/taiwan_food_guide.html` }
+        ],
+        archivePages: [
+          { path: 'youtube_food_guide.html', title: '유튜브 맛집 가이드 V4 (index와 동일)', url: `${BASE_URL}/taiwan-food-yt/youtube_food_guide.html` },
+          { path: 'youtube_food_guide_mobile.html', title: '유튜브 맛집 가이드 모바일 V4 (mobile과 동일)', url: `${BASE_URL}/taiwan-food-yt/youtube_food_guide_mobile.html` }
         ]
       },
       {
-        id: 'taiwan-hotel-miles',
-        category: 'taiwan',
-        categoryLabel: '✈️ 대만 여행·미식·숙소',
         repo: 'taiwan-hotel',
-        title: '타이베이 에미레이트 리워드 호텔 50선 비교 대시보드',
-        desc: '1박 10,000~15,000 마일 가성비 호텔 50선(v2 기본) 및 5성급 럭셔리 50선(v1) 마일당 원화 가치·구글 실좌표 비교.',
-        tags: ['에미레이트 마일리지', '가성비 50선(v2)', '럭셔리 50선(v1)'],
-        pcUrl: `${BASE_URL}/taiwan-food/hotel/`,
-        mobileUrl: null,
-        subLinks: [
-          { label: 'v1 5성급 럭셔리 호텔 50선 대시보드', path: 'taiwan-food/hotel/v1.html', url: `${BASE_URL}/taiwan-food/hotel/v1.html` },
-          { label: '단독 저장소 v2 (taiwan-hotel)', path: 'taiwan-hotel/index.html', url: `${BASE_URL}/taiwan-hotel/` },
-          { label: '단독 저장소 v1 (taiwan-hotel)', path: 'taiwan-hotel/v1.html', url: `${BASE_URL}/taiwan-hotel/v1.html` }
+        icon: '🏨',
+        categoryBadge: '대만 숙소 비교',
+        desc: '타이베이 에미레이트 리워드 가성비 호텔 50선(v2) 및 5성급 럭셔리 50선(v1) 단독 저장소',
+        mainPcUrl: `${BASE_URL}/taiwan-hotel/`,
+        mainMobileUrl: null,
+        pages: [
+          { path: 'index.html', title: '타이베이 에미레이트 리워드 10,000~15,000 마일 가성비 호텔 50선 (v2 기본)', type: 'PC', url: `${BASE_URL}/taiwan-hotel/` },
+          { path: 'v1.html', title: '타이베이 에미레이트 리워드 추천 5성급 럭셔리 호텔 상위 50선 (v1)', type: 'PC', url: `${BASE_URL}/taiwan-hotel/v1.html` }
+        ],
+        archivePages: [
+          { path: 'v2.html', title: '가성비 호텔 50선 v2 (index와 동일)', url: `${BASE_URL}/taiwan-hotel/v2.html` },
+          { path: 'taiwan-hotel_v2.html', title: '가성비 호텔 50선 taiwan-hotel_v2 (index와 동일)', url: `${BASE_URL}/taiwan-hotel/taiwan-hotel_v2.html` }
         ]
       },
-
-      // === REALTY ===
       {
-        id: 'realty-yuye-analysis',
-        category: 'realty',
-        categoryLabel: '🏢 부동산 분석',
         repo: 'realty-yuye',
-        title: '다주택자 양도세 중과 유예 해제: 실거래·호가 및 매수 유불리 분석',
-        desc: '2025.06~2026.09 권역별 대장아파트 실거래가·호가 선후행 특성 및 양도세 중과 유예 해제에 따른 매수 전략 리포트.',
-        tags: ['양도세 중과', '실거래가 선후행', '권역별 대장주'],
-        pcUrl: `${BASE_URL}/realty-yuye/`,
-        mobileUrl: null,
-        subLinks: []
+        icon: '🏢',
+        categoryBadge: '부동산 분석',
+        desc: '2025.06~2026.09 다주택자 양도세 중과 유예 해제: 실거래가·호가 선후행 및 매수 유불리 종합 분석',
+        mainPcUrl: `${BASE_URL}/realty-yuye/`,
+        mainMobileUrl: null,
+        pages: [
+          { path: 'index.html', title: '다주택자 양도세 중과 유예 해제 · 실거래가·호가 선후행 및 매수 유불리 종합 분석', type: 'PC/반응형', url: `${BASE_URL}/realty-yuye/` }
+        ],
+        archivePages: []
       }
     ];
 
-    // All known raw HTML files across repos (fallback + initial list before live GitHub sync)
-    const INITIAL_RAW_FILES = [
-      { repo: 'coffee', cat: '☕ 커피', path: 'index.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'mobile_index.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'analytics.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'archers_coffee_clean_verified.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'archers_coffee_guide.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'archers_mobile.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'theespressolab_verified.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'theespressolab_mobile.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'cart.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'mobile_cart.html' },
-      { repo: 'coffee', cat: '☕ 커피', path: 'mobile.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'index.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'food/index.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'food/mobile.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'food/taiwan_food_guide.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'food/youtube_food_guide.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'food/youtube_food_guide_mobile.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'hotel/index.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'hotel/v1.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'hotel/v2.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'hotel/taiwan-hotel_v2.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'trip_plan/taipei_3n4d_dashboard_v3.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'trip_plan/taipei_travel_plan_mobile_v3.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'trip_plan/taipei_3n4d_dashboard_v2.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'trip_plan/taipei_travel_plan_mobile_v2.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'trip_plan/taipei_3n4d_dashboard.html' },
-      { repo: 'taiwan-food', cat: '✈️ 대만', path: 'trip_plan/taipei_travel_plan_mobile.html' },
-      { repo: 'taiwan-trip', cat: '✈️ 대만', path: 'index.html' },
-      { repo: 'taiwan-trip', cat: '✈️ 대만', path: 'taipei_3n4d_dashboard_v3.html' },
-      { repo: 'taiwan-trip', cat: '✈️ 대만', path: 'taipei_travel_plan_mobile_v3.html' },
-      { repo: 'taiwan-food-yt', cat: '✈️ 대만', path: 'index.html' },
-      { repo: 'taiwan-food-yt', cat: '✈️ 대만', path: 'mobile.html' },
-      { repo: 'taiwan-food-yt', cat: '✈️ 대만', path: 'taiwan_food_guide.html' },
-      { repo: 'taiwan-hotel', cat: '✈️ 대만', path: 'index.html' },
-      { repo: 'taiwan-hotel', cat: '✈️ 대만', path: 'v1.html' },
-      { repo: 'taiwan-hotel', cat: '✈️ 대만', path: 'v2.html' },
-      { repo: 'realty-yuye', cat: '🏢 부동산', path: 'index.html' }
-    ];
-
-    const CATEGORY_META = {
-      coffee: { title: '☕ 스페셜티 커피 (UAE 2대 로스터리 & 원두 분석)', repo: 'coffee', badgeClass: 'cat-coffee' },
-      taiwan: { title: '✈️ 대만 타이베이 여행 · 미식 · 숙소 가이드', repo: 'taiwan-food / taiwan-trip', badgeClass: 'cat-taiwan' },
-      realty: { title: '🏢 부동산 시장 · 세제 심층 분석', repo: 'realty-yuye', badgeClass: 'cat-realty' }
-    };
-
-    // State
-    let activeCategory = 'all';
+    let activeRepo = 'all';
     let searchQuery = '';
     let isMobileDevice = false;
-    let pinnedIds = [];
-
-    try {
-      pinnedIds = JSON.parse(localStorage.getItem('portal_pins') || '["coffee-main-hub", "taiwan-trip-v3", "realty-yuye-analysis"]');
-    } catch (e) {
-      pinnedIds = ['coffee-main-hub', 'taiwan-trip-v3', 'realty-yuye-analysis'];
-    }
 
     function detectDevice() {
       isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
       const el = document.getElementById('device-text');
-      if (el) {
-        el.textContent = isMobileDevice ? '📱 모바일 환경 맞춤' : '💻 PC 환경 맞춤';
-      }
+      if (el) el.textContent = isMobileDevice ? '📱 모바일 접속' : '💻 PC 접속';
     }
 
     function showToast(msg) {
@@ -1079,7 +866,7 @@
 
     function copyUrl(url) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(() => showToast('클립보드에 링크가 복사되었습니다'));
+        navigator.clipboard.writeText(url).then(() => showToast('링크가 복사되었습니다'));
       } else {
         const ta = document.createElement('textarea');
         ta.value = url;
@@ -1087,280 +874,236 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast('클립보드에 링크가 복사되었습니다');
+        showToast('링크가 복사되었습니다');
       }
     }
 
-    function togglePin(id) {
-      if (pinnedIds.includes(id)) {
-        pinnedIds = pinnedIds.filter(item => item !== id);
-        showToast('즐겨찾기에서 해제되었습니다');
-      } else {
-        pinnedIds.push(id);
-        showToast('즐겨찾기에 고정되었습니다 ⭐');
-      }
-      try {
-        localStorage.setItem('portal_pins', JSON.stringify(pinnedIds));
-      } catch (e) {}
-      updateCounts();
-      renderPortal();
-    }
+    function renderTabs() {
+      const tabsEl = document.getElementById('repo-tabs');
+      const totalFiles = REPOSITORIES.reduce((acc, r) => acc + r.pages.length + (r.archivePages ? r.archivePages.length : 0), 0);
 
-    function updateCounts() {
-      document.getElementById('count-all').textContent = PORTAL_ITEMS.length;
-      document.getElementById('count-pinned').textContent = PORTAL_ITEMS.filter(i => pinnedIds.includes(i.id)).length;
-      document.getElementById('count-coffee').textContent = PORTAL_ITEMS.filter(i => i.category === 'coffee').length;
-      document.getElementById('count-taiwan').textContent = PORTAL_ITEMS.filter(i => i.category === 'taiwan').length;
-      document.getElementById('count-realty').textContent = PORTAL_ITEMS.filter(i => i.category === 'realty').length;
-    }
-
-    function renderCard(item) {
-      const isPinned = pinnedIds.includes(item.id);
-      const meta = CATEGORY_META[item.category] || { badgeClass: 'cat-hub' };
-      const primaryHref = (isMobileDevice && item.mobileUrl) ? item.mobileUrl : item.pcUrl;
-
-      let buttonsHtml = '';
-      if (item.mobileUrl) {
-        const pcClass = !isMobileDevice ? 'link-btn primary' : 'link-btn';
-        const mobClass = isMobileDevice ? 'link-btn primary' : 'link-btn recommended';
-        buttonsHtml = `
-          <div class="btn-row">
-            <a href="${item.pcUrl}" target="_blank" rel="noopener" class="${pcClass}">
-              💻 PC 버전
-            </a>
-            <a href="${item.mobileUrl}" target="_blank" rel="noopener" class="${mobClass}">
-              📱 모바일 버전
-            </a>
-          </div>
-        `;
-      } else {
-        buttonsHtml = `
-          <div class="btn-row">
-            <a href="${item.pcUrl}" target="_blank" rel="noopener" class="link-btn primary">
-              페이지 열기 ↗
-            </a>
-          </div>
-        `;
-      }
-
-      let subLinksHtml = '';
-      if (item.subLinks && item.subLinks.length > 0) {
-        const listItems = item.subLinks.map(sub => `
-          <a href="${sub.url}" target="_blank" rel="noopener" class="sublink-item">
-            <span>${sub.label}</span>
-            <span class="mono-path">${sub.path} ↗</span>
-          </a>
-        `).join('');
-        subLinksHtml = `
-          <details class="sublinks-details">
-            <summary>
-              <span>관련 파일 · 이전 버전 (${item.subLinks.length})</span>
-              <span>▾</span>
-            </summary>
-            <div class="sublinks-list">${listItems}</div>
-          </details>
-        `;
-      }
-
-      return `
-        <article class="card">
-          <div>
-            <div class="card-head">
-              <span class="cat-pill ${meta.badgeClass}">${item.categoryLabel}</span>
-              <div class="card-tools">
-                <button class="mini-btn" onclick="copyUrl('${primaryHref}')" title="링크 복사" aria-label="링크 복사">🔗</button>
-                <button class="mini-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${item.id}')" title="즐겨찾기 고정" aria-label="즐겨찾기">
-                  ${isPinned ? '★' : '☆'}
-                </button>
-              </div>
-            </div>
-            <h3 class="card-title">
-              <a href="${primaryHref}" target="_blank" rel="noopener">${item.title}</a>
-            </h3>
-            <p class="card-desc">${item.desc}</p>
-            <div class="tag-row">
-              ${item.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
-            </div>
-          </div>
-          <div class="card-footer">
-            ${buttonsHtml}
-            ${subLinksHtml}
-          </div>
-        </article>
+      let html = `
+        <button class="tab-btn ${activeRepo === 'all' ? 'active' : ''}" data-repo="all">
+          전체 레포 (${REPOSITORIES.length}) <span class="tab-count">${totalFiles}</span>
+        </button>
       `;
-    }
 
-    function renderPortal() {
-      const container = document.getElementById('portal-content');
-      const q = searchQuery.trim().toLowerCase();
-
-      const filtered = PORTAL_ITEMS.filter(item => {
-        if (activeCategory === 'pinned' && !pinnedIds.includes(item.id)) return false;
-        if (activeCategory !== 'all' && activeCategory !== 'pinned' && item.category !== activeCategory) return false;
-        if (!q) return true;
-        const hay = [
-          item.title,
-          item.desc,
-          item.repo,
-          ...(item.tags || []),
-          ...(item.subLinks || []).map(s => s.label + ' ' + s.path)
-        ].join(' ').toLowerCase();
-        return hay.includes(q);
+      REPOSITORIES.forEach(r => {
+        const count = r.pages.length + (r.archivePages ? r.archivePages.length : 0);
+        html += `
+          <button class="tab-btn ${activeRepo === r.repo ? 'active' : ''}" data-repo="${r.repo}">
+            ${r.icon} ${r.repo} <span class="tab-count">${count}</span>
+          </button>
+        `;
       });
 
-      if (filtered.length === 0) {
-        container.innerHTML = `<div class="empty-state">조건에 맞는 HTML 페이지가 없습니다.</div>`;
-        return;
-      }
+      tabsEl.innerHTML = html;
 
-      // If showing 'all' and no search query, show Pinned section at top (if any) + grouped categories
-      if (activeCategory === 'all' && !q) {
-        let html = '';
+      tabsEl.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeRepo = btn.getAttribute('data-repo');
+          renderTabs();
+          renderRepos();
+        });
+      });
+    }
 
-        const pinnedItems = filtered.filter(i => pinnedIds.includes(i.id));
-        if (pinnedItems.length > 0) {
-          html += `
-            <section class="category-section">
-              <div class="section-header">
-                <div class="section-title-group">
-                  <h2 class="section-title">⭐ 자주 찾는 페이지 (즐겨찾기)</h2>
-                </div>
+    function getBadgeClass(type) {
+      if (!type) return 'badge-ver';
+      const lower = type.toLowerCase();
+      if (lower.includes('mobile') || lower.includes('모바일')) return 'badge-mob';
+      if (lower.includes('pc') || lower.includes('hub')) return 'badge-pc';
+      return 'badge-ver';
+    }
+
+    function renderRepos() {
+      const container = document.getElementById('repo-container');
+      const q = searchQuery.trim().toLowerCase();
+
+      const blocks = [];
+
+      REPOSITORIES.forEach(r => {
+        if (activeRepo !== 'all' && activeRepo !== r.repo) return;
+
+        const repoMatches = r.repo.toLowerCase().includes(q) || r.desc.toLowerCase().includes(q) || r.categoryBadge.toLowerCase().includes(q);
+
+        const matchedPages = r.pages.filter(p => {
+          if (!q || repoMatches) return true;
+          return (p.path + ' ' + p.title + ' ' + (p.type || '')).toLowerCase().includes(q);
+        });
+
+        const matchedArchive = (r.archivePages || []).filter(p => {
+          if (!q || repoMatches) return true;
+          return (p.path + ' ' + p.title).toLowerCase().includes(q);
+        });
+
+        if (matchedPages.length === 0 && matchedArchive.length === 0) return;
+
+        const primaryUrl = (isMobileDevice && r.mainMobileUrl) ? r.mainMobileUrl : r.mainPcUrl;
+
+        let actionBtns = `
+          <a href="${r.mainPcUrl}" target="_blank" rel="noopener" class="btn ${!isMobileDevice || !r.mainMobileUrl ? 'btn-primary' : ''}">
+            💻 대표 페이지 (PC) ↗
+          </a>
+        `;
+        if (r.mainMobileUrl) {
+          actionBtns += `
+            <a href="${r.mainMobileUrl}" target="_blank" rel="noopener" class="btn ${isMobileDevice ? 'btn-primary' : 'btn-mobile'}">
+              📱 모바일 버전 ↗
+            </a>
+          `;
+        }
+        actionBtns += `
+          <a href="https://github.com/${GITHUB_USER}/${r.repo}" target="_blank" rel="noopener" class="btn" title="GitHub 저장소 열기">
+            GitHub
+          </a>
+        `;
+
+        const pagesHtml = matchedPages.map(p => `
+          <div class="page-item">
+            <div class="page-info">
+              <div class="page-top">
+                <a href="${p.url}" target="_blank" rel="noopener" class="page-path">${p.path}</a>
+                <span class="type-badge ${getBadgeClass(p.type)}">${p.type}</span>
               </div>
-              <div class="grid">
-                ${pinnedItems.map(renderCard).join('')}
+              <a href="${p.url}" target="_blank" rel="noopener" class="page-title">${p.title}</a>
+            </div>
+            <div class="page-right">
+              <button class="copy-btn" onclick="copyUrl('${p.url}')" title="링크 복사">🔗</button>
+              <a href="${p.url}" target="_blank" rel="noopener" class="open-pill">열기 ↗</a>
+            </div>
+          </div>
+        `).join('');
+
+        let archiveHtml = '';
+        if (matchedArchive.length > 0) {
+          const archiveItems = matchedArchive.map(a => `
+            <a href="${a.url}" target="_blank" rel="noopener" class="archive-item">
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--text-primary);">${a.path}</span>
+              <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${a.title} ↗</span>
+            </a>
+          `).join('');
+
+          archiveHtml = `
+            <details class="repo-archive" ${q && !repoMatches ? 'open' : ''}>
+              <summary>
+                <span>📁 구버전 · 미러 HTML 파일 (${matchedArchive.length}개)</span>
+                <span>▾</span>
+              </summary>
+              <div class="archive-grid">
+                ${archiveItems}
               </div>
-            </section>
+            </details>
           `;
         }
 
-        ['coffee', 'taiwan', 'realty'].forEach(catKey => {
-          const catItems = filtered.filter(i => i.category === catKey);
-          if (catItems.length === 0) return;
-          const meta = CATEGORY_META[catKey];
-          html += `
-            <section class="category-section">
-              <div class="section-header">
-                <div class="section-title-group">
-                  <h2 class="section-title">${meta.title}</h2>
+        blocks.push(`
+          <section class="repo-card">
+            <div class="repo-header">
+              <div class="repo-title-area">
+                <div class="repo-name-row">
+                  <span class="repo-icon">${r.icon}</span>
+                  <a href="${primaryUrl}" target="_blank" rel="noopener" class="repo-name">${r.repo}</a>
+                  <span class="repo-tag">${r.categoryBadge}</span>
                 </div>
-                <a href="https://github.com/${GITHUB_USER}/${catItems[0].repo}" target="_blank" rel="noopener" class="section-repo-badge">
-                  github.com/${GITHUB_USER}/${catItems[0].repo} ↗
-                </a>
+                <p class="repo-desc">${r.desc}</p>
               </div>
-              <div class="grid">
-                ${catItems.map(renderCard).join('')}
+              <div class="repo-actions">
+                ${actionBtns}
               </div>
-            </section>
-          `;
-        });
-
-        container.innerHTML = html;
-      } else {
-        container.innerHTML = `
-          <section class="category-section">
-            <div class="grid">
-              ${filtered.map(renderCard).join('')}
             </div>
+            <div class="page-grid">
+              ${pagesHtml}
+            </div>
+            ${archiveHtml}
           </section>
-        `;
+        `);
+      });
+
+      if (blocks.length === 0) {
+        container.innerHTML = `<div class="empty-state">검색 조건에 일치하는 레포지토리 또는 HTML 파일이 없습니다.</div>`;
+      } else {
+        container.innerHTML = blocks.join('');
       }
     }
 
-    function renderRawTable(files) {
-      const tbody = document.getElementById('raw-files-tbody');
-      const q = searchQuery.trim().toLowerCase();
-      const filtered = files.filter(f => {
-        if (!q) return true;
-        return (f.repo + ' ' + f.path + ' ' + f.cat).toLowerCase().includes(q);
-      });
-
-      tbody.innerHTML = filtered.map(f => {
-        const fullUrl = f.path === 'index.html'
-          ? `${BASE_URL}/${f.repo}/`
-          : `${BASE_URL}/${f.repo}/${f.path}`;
-        return `
-          <tr>
-            <td style="font-weight: 600;">${f.repo}</td>
-            <td><span class="tag">${f.cat}</span></td>
-            <td><a href="${fullUrl}" target="_blank" rel="noopener">${f.repo}/${f.path}</a></td>
-            <td style="text-align: right;">
-              <button class="mini-btn" onclick="copyUrl('${fullUrl}')" title="URL 복사">🔗</button>
-            </td>
-          </tr>
-        `;
-      }).join('');
-    }
-
+    // Live GitHub Sync: Discovers any new repo or new .html file automatically
     async function syncFromGitHub() {
-      const btn = document.getElementById('sync-github-btn');
+      const btn = document.getElementById('sync-btn');
       btn.disabled = true;
-      btn.innerHTML = '<span>⏳</span> 동기화 중...';
+      btn.innerHTML = '<span>⏳</span> <span>조회 중...</span>';
+
       try {
         const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`);
-        if (!res.ok) throw new Error('GitHub API 호출 제한 또는 오류');
+        if (!res.ok) throw new Error('API Error');
         const repos = await res.json();
-        const pageRepos = repos.filter(r => r.has_pages);
-        const discovered = [];
+        const pageRepos = repos.filter(r => r.has_pages && r.name !== 'portal' && r.name !== `${GITHUB_USER}.github.io`);
 
-        for (const r of pageRepos) {
+        let addedCount = 0;
+
+        for (const ghRepo of pageRepos) {
+          let localRepo = REPOSITORIES.find(r => r.repo === ghRepo.name);
+          if (!localRepo) {
+            localRepo = {
+              repo: ghRepo.name,
+              icon: '📦',
+              categoryBadge: '신규 저장소',
+              desc: ghRepo.description || `${ghRepo.name} GitHub Pages 저장소`,
+              mainPcUrl: `${BASE_URL}/${ghRepo.name}/`,
+              mainMobileUrl: null,
+              pages: [],
+              archivePages: []
+            };
+            REPOSITORIES.push(localRepo);
+          }
+
           try {
-            const treeRes = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${r.name}/git/trees/${r.default_branch}?recursive=1`);
+            const treeRes = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${ghRepo.name}/git/trees/${ghRepo.default_branch}?recursive=1`);
             if (!treeRes.ok) continue;
             const treeData = await treeRes.json();
             const htmlFiles = (treeData.tree || []).filter(t => t.path && t.path.endsWith('.html'));
-            const catLabel = r.name.includes('coffee') ? '☕ 커피'
-              : r.name.includes('taiwan') ? '✈️ 대만'
-              : r.name.includes('realty') ? '🏢 부동산' : '📄 기타';
+
             htmlFiles.forEach(hf => {
-              discovered.push({ repo: r.name, cat: catLabel, path: hf.path });
+              const existsInPages = localRepo.pages.some(p => p.path === hf.path);
+              const existsInArchive = (localRepo.archivePages || []).some(p => p.path === hf.path);
+              if (!existsInPages && !existsInArchive) {
+                const fullUrl = hf.path === 'index.html' ? `${BASE_URL}/${ghRepo.name}/` : `${BASE_URL}/${ghRepo.name}/${hf.path}`;
+                localRepo.pages.push({
+                  path: hf.path,
+                  title: `${hf.path} (GitHub 실시간 감지)`,
+                  type: hf.path.includes('mobile') ? 'Mobile' : 'HTML',
+                  url: fullUrl
+                });
+                addedCount++;
+              }
             });
           } catch (e) {}
         }
 
-        if (discovered.length > 0) {
-          window.__rawFiles = discovered;
-          renderRawTable(discovered);
-          showToast(`GitHub에서 ${discovered.length}개의 HTML 파일을 불러왔습니다`);
-        } else {
-          showToast('기본 목록을 유지합니다');
-        }
+        renderTabs();
+        renderRepos();
+        showToast(addedCount > 0 ? `새 HTML 파일 ${addedCount}개를 추가했습니다` : '모든 레포지토리가 최신 상태입니다');
       } catch (err) {
-        showToast('GitHub API 조회 실패 (기본 목록 표시)');
+        showToast('GitHub API 호출 한도 초과 또는 네트워크 오류');
       } finally {
         btn.disabled = false;
-        btn.innerHTML = '<span>🔄</span> GitHub 실시간 동기화';
+        btn.innerHTML = '<span>🔄</span> <span>동기화</span>';
       }
     }
 
-    // Event Listeners
     document.addEventListener('DOMContentLoaded', () => {
       detectDevice();
       window.addEventListener('resize', detectDevice);
 
-      window.__rawFiles = INITIAL_RAW_FILES;
-      updateCounts();
-      renderPortal();
-      renderRawTable(window.__rawFiles);
+      renderTabs();
+      renderRepos();
 
-      // Category Tabs
-      document.querySelectorAll('#category-tabs .tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('#category-tabs .tab-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeCategory = btn.getAttribute('data-cat');
-          renderPortal();
-        });
-      });
-
-      // Search Input
       const searchInput = document.getElementById('search-input');
       searchInput.addEventListener('input', (e) => {
         searchQuery = e.target.value;
-        renderPortal();
-        renderRawTable(window.__rawFiles);
+        renderRepos();
       });
 
-      // Keyboard shortcut '/' for search
       window.addEventListener('keydown', (e) => {
         if (e.key === '/' && document.activeElement !== searchInput) {
           e.preventDefault();
@@ -1370,7 +1113,6 @@
         }
       });
 
-      // Theme toggle
       const themeBtn = document.getElementById('theme-toggle');
       const themeIcon = document.getElementById('theme-icon');
       function syncThemeIcon() {
@@ -1387,8 +1129,7 @@
         syncThemeIcon();
       });
 
-      // GitHub Sync
-      document.getElementById('sync-github-btn').addEventListener('click', syncFromGitHub);
+      document.getElementById('sync-btn').addEventListener('click', syncFromGitHub);
     });
   </script>
 </body>
